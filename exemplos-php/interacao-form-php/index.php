@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">    
-    <title>Titulo na Aba</title>
+    <meta charset="UTF-8">
+    <title>Form de boas Vindas</title>
 </head>
 <body>
-    <style>
-        /*tag style é um aod lugares para codificar css*/
-        h1{
-           color: rebecc#ffff; 
-           background-color: black;
-           text-align: center;
-        }
-
-    </style>
-   
- <h1 onclick="alert('')">Minha página</h1>   
- <script>
-    document.write("Olá mundo JS 2")
- </script>
- <?php
- <a href="exemplos-php/interacao-form-php/index.html">Exemplo Form PHP</a>
- ?>
+    <h1>Formulario usa method POST</h1>
+    <form action="bem-vindo-post.php" method="post">
+        Nome:<input type="text" name="nome"><br>
+        E-mail:<input type="text" name="email"><br>
+        Idade:<input type="text" name="Idade"><br>
+        <input type="submit">
+    </form>
+    <h1>Formulario usa method GET</h1>
+    <form action="bem-vindo-get.php" method="get">
+        Nome:<input type="text" name="nome"><br>
+        E-mail:<input type="text" name="email"><br>
+        Idade:<input type="text" name="Idade"><br>
+        <input type="submit">
+    </form>
+    <br>
+    <a href="/curso-php/index.php">Voltar</a>
 </body>
 </html>
