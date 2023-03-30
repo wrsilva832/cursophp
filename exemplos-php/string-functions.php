@@ -1,0 +1,1 @@
+//Resumo das principais functions de string
