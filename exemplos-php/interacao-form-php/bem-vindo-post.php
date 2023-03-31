@@ -7,9 +7,8 @@ $Idade = $_POST["Idade"];
 
 echo "Bem Vindo ao mundo PHP $nome <br>";
 echo "E-mail registrado $email";
-echo "Idade registrado $Idade";
-
-
-
+echo "Idade $Idade  <br>";
 
 ?>
+
+<a href="index.html">Voltar</a>
