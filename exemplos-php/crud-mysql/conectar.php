@@ -42,7 +42,7 @@ function buscar($id){
     return $resultado;
 }
 
-function alterar($id, $nome, $email){
+function alterar($id, $nome, $email, $cpf){
     $con = conectar();
     $sql = "update pessoa set nome = '$nome', email = '$email', cpf = '$cpf' where id = $id";
     if($con->query($sql) === true){

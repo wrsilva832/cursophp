@@ -7,7 +7,7 @@
 <body>
 <?php
 include 'conectar.php';
-$id = $nome = $email = $cp "";
+$id = $nome = $email = $cpf "";
 if($_SERVER["REQUEST_METHOD"] == "GET"f){
     if (array_key_exists('id',$_GET)){
         $id = $_GET['id'];
