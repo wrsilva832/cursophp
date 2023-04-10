@@ -26,12 +26,12 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 <form action="form-pessoa.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <h1>Formulário de Pessoa</h1>
-            <label for="">Nome:</label>
+            <label for="">Nome:</label><br>
             <input type="text" name="nome" value="<?php echo $nome; ?>"><br>
-            <label for="">E-mail:</label>
+            <label for="">E-mail:</label><br>
             <input type="text" name="email" value="<?php echo $email; ?>"><br>
-            <label for="">Cpf:</label>
-            <input type="text" name="cpf" value="<?php echo $cpf; ?>">
+            <label for="">Cpf:</label><br>
+            <input type="text" name="cpf" value="<?php echo $cpf; ?>"><br>
             <input type="submit" value="Gravar" class="btn_submit">
 </form>
 <?php
