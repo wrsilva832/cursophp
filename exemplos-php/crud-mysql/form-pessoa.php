@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $pessoa = buscar($id);
         $nome = $pessoa['nome'];
         $email = $pessoa['email'];
-        $email = $pessoa['cpf'];
+        $cpf = $pessoa['cpf'];
     }
     if (array_key_exists('apagar',$_GET)){
         $apagar = $_GET['apagar'];
