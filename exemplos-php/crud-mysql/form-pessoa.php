@@ -14,6 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $pessoa = buscar($id);
         $nome = $pessoa['nome'];
         $email = $pessoa['email'];
+        $email = $pessoa['cpf'];
     }
     if (array_key_exists('apagar',$_GET)){
         $apagar = $_GET['apagar'];
@@ -29,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
             <input type="text" name="nome" value="<?php echo $nome; ?>"><br>
             <label for="">E-mail:</label>
             <input type="text" name="email" value="<?php echo $email; ?>"><br>
-            <label for="">cpf:</label>
+            <label for="">Cpf:</label>
             <input type="text" name="cpf" value="<?php echo $cpf; ?>">
             <input type="submit" value="Gravar" class="btn_submit">
 </form>
