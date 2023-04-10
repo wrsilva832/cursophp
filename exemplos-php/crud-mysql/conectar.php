@@ -61,5 +61,3 @@ function apagar($id){
         return "Erro: $sql".$con->error;
     }
 }
-
-?>
