@@ -7,8 +7,8 @@
 <body>
 <?php
 include 'conectar.php';
-$id = $nome = $email = $cpf "";
-if($_SERVER["REQUEST_METHOD"] == "GET"f){
+$id = $nome = $email = $cpf = "";
+if($_SERVER["REQUEST_METHOD"] == "GET"){
     if (array_key_exists('id',$_GET)){
         $id = $_GET['id'];
         $pessoa = buscar($id);
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"f){
             <input type="text" name="nome" value="<?php echo $nome; ?>"><br>
             <label for="">E-mail:</label>
             <input type="text" name="email" value="<?php echo $email; ?>"><br>
-            <label for="">CPF:</label>
+            <label for="">cpf:</label>
             <input type="text" name="cpf" value="<?php echo $cpf; ?>">
             <input type="submit" value="Gravar" class="btn_submit">
 </form>
@@ -47,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg = alterar($id, $nome, $email, $cpf);
     }
     
-    //echo $msg;
 }
 
 ?>
