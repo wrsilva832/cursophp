@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <th>Id</th>
         <th>Nome</th>
         <th>Email</th>
-        <th>cpf</th>
+        <th>Cpf</th>
     </tr>
     <?php
     $dados = listar();
