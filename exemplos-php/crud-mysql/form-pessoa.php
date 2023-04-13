@@ -73,8 +73,10 @@
         <input type="radio" name="escolaridade" value="Superior" required <?php if ($escolaridade == "Superior") echo "checked"; ?>>Superior
         <input type="radio" name="escolaridade" value="Incompleto" required <?php if ($escolaridade == "Incompleto") echo "checked"; ?>>Incompleto<br>
         Senha: <br>
-        <input type="password" name="senha">
-        <input type="submit" value="Confirmar">
+        <input type="password" name="senha"><br>
+        Confirmar Senha:<br>
+        <input type="password" name="confirmar senha"><br>
+        <input type="submit" value="Gravar">
         <form>
             <br>
             <br>
