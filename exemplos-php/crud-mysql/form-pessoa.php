@@ -74,18 +74,23 @@
         Sexo: <br>
         <input type="radio" name="sexo" value="m" required <?php if ($sexo == "m") echo "checked"; ?>>Masculino<br>
         <input type="radio" name="sexo" value="f" required <?php if ($sexo == "f") echo "checked"; ?>>Feminino<br>
-        Escolaridade: <br>
-        <input type="radio" name="escolaridade" value="Ensino Médio" required <?php if ($escolaridade == "Ensino Médio") echo "checked"; ?>>Ensino Médio
-        <input type="radio" name="escolaridade" value="Superior" required <?php if ($escolaridade == "Superior") echo "checked"; ?>>Superior
-        <input type="radio" name="escolaridade" value="Incompleto" required <?php if ($escolaridade == "Incompleto") echo "checked"; ?>>Incompleto<br>
+        <form action="/action_page.php">
+            <label for="cars">Escolaridade:</label>
+            <select id="cars" name="cars">
+                <option value="volvo">Ensino Médio</option>
+                <option value="saab">Superior</option>
+                <option value="fiat">Incompleto</option>
+            </select>
+            <input type="submit">
+        </form>
         <!-- senha nao pode aparecer quando for editar -->
         <!-- abre condição -->
         <!-- se existe a chave id -->
-        <?php if(!array_key_exists('id', $_GET)) {?>
-        Senha: <br>
-        <input type="password" name="senha"><br>
-        Confirmar:<br>
-        <input type="password" name="confirmar"><br>
+        <?php if (!array_key_exists('id', $_GET)) { ?>
+            Senha: <br>
+            <input type="password" name="senha"><br>
+            Confirmar:<br>
+            <input type="password" name="confirmar"><br>
         <?php } ?>
         <!-- fecha condicao -->
         <form>
