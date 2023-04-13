@@ -20,7 +20,7 @@
             $cpf = $pessoa['cpf'];
             $sexo = $pessoa['sexo'];
             $escolaridade = $pessoa['escolaridade'];
-            $sexo = $senha['senha'];
+            // $senha = $senha['senha'];
         }
         if (array_key_exists('apagar', $_GET)) {
             $apagar = $_GET['apagar'];
@@ -36,7 +36,6 @@
         $cpf = $_POST['cpf'];
         $sexo = $_POST['sexo'];
         $escolaridade = $_POST['escolaridade'];
-        $senha = $_POST['senha'];
         $id = $_POST['id'];
 
         $cpf = str_replace(".", "", $cpf);
@@ -44,7 +43,14 @@
 
         if (validarCpf($cpf)) {
             if ($id == '') {
-                $msg = incluir($nome, $email, $cpf, $sexo, $$escolaridade, $senha);
+                // aprovar inclusao da senha contece no alterar
+                $senha = $_POST['senha'];
+                $confirmar = $_POST['confirmar'];
+                if ($senha == $confirmar) {
+                    $msg = incluir($nome, $email, $cpf, $sexo, $$escolaridade, $senha);
+                } else {
+                    $msg = "Senha não confere";
+                }
             } else {
                 $msg = alterar($id, $nome, $email, $cpf, $sexo, $escolaridade, $senha);
             }
@@ -72,11 +78,16 @@
         <input type="radio" name="escolaridade" value="Ensino Médio" required <?php if ($escolaridade == "Ensino Médio") echo "checked"; ?>>Ensino Médio
         <input type="radio" name="escolaridade" value="Superior" required <?php if ($escolaridade == "Superior") echo "checked"; ?>>Superior
         <input type="radio" name="escolaridade" value="Incompleto" required <?php if ($escolaridade == "Incompleto") echo "checked"; ?>>Incompleto<br>
+        <!-- senha nao pode aparecer quando for editar -->
+        <!-- abre condição -->
+        <!-- se existe a chave id -->
+        <?php if(!array_key_exists('id', $_GET)) {?>
         Senha: <br>
         <input type="password" name="senha"><br>
-        Confirmar Senha:<br>
-        <input type="password" name="confirmar senha"><br>
-        <input type="submit" value="Gravar">
+        Confirmar:<br>
+        <input type="password" name="confirmar"><br>
+        <?php } ?>
+        <!-- fecha condicao -->
         <form>
             <br>
             <br>
@@ -94,7 +105,7 @@
                 <th>CPF</th>
                 <th>Sexo</th>
                 <th>Escolaridade</th>
-                <th>Senha</th>
+                <!-- <th>Senha</th> -->
             </tr>
             <?php
             $dados = listar();
@@ -105,8 +116,8 @@
                 echo "<td>" . $linha['email'] . "</td>";
                 echo "<td>" . $linha['cpf'] . "</td>";
                 echo "<td>" . $linha['sexo'] . "</td>";
-                echo "<td>" . $linha['escolaridade'] . "</td>";                
-                echo "<td>" . $senha['senha'] . "</td>";
+                echo "<td>" . $linha['escolaridade'] . "</td>";
+                // echo "<td>" . $senha['senha'] . "</td>"; --comentar pois a senha nao pode aparecer ao editar
                 echo "<td><a href='form-pessoa.php?id=" . $linha['id'] . "'>Editar</a></td>";
                 echo "<td><a onclick='return apagar(" . $linha['id'] . ");' href='form-pessoa.php?apagar=" . $linha['id'] . "'>Apagar</a></td>";
                 echo "</tr>";
