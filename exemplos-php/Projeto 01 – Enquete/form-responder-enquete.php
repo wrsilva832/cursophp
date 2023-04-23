@@ -9,4 +9,19 @@ $enquete = $linha['noma'];
 $sql = "select * from resposta where id_enquete = $id;";
 $resultado = conectar($sql);
 ?>
-<!-- pagina 4 do word -->
+<h2><?php echo $enquete;?> <a href="index.php" class="btn btn-outline-secondary">Voltar</a></h2>
+<form action="responder-enquete.php" method="POST">
+    <?php
+    while ($linha = $resultado->fetch_assoc()) {
+        $nome = $linha['nome']
+        $id = $linha['id'];    
+    ?>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" id="radio<?php echo $id;?>" name="resposta" value="<?php echo $id;?>">
+        <label class="form-check-label" for="radio<?php echo $id;?>"><?php echo $nome;?></label>
+    </div>
+    <?php
+    }
+    ?>
+    <button type="submit" class="btn btn-outline-primary mt-3">Submit</button>
+</form>
