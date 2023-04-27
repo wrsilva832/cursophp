@@ -5,7 +5,7 @@
     <?php
     $qtOpcoes = $_GET['qt-opcoes'];
     for ($i = 0; $i < $qtOpcoes; $i++) {
-        echo "<input type='text' class='form-control' name='opcap[]' value='Opcao $i'><br>";
+        echo "<input type='text' class='form-control' name='opcao[]' value='Opcao $i'><br>";
     }
     ?>
     <br>

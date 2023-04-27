@@ -4,7 +4,7 @@ $sql = "select * from enquete where id = $id;";
 $resultado = conectar($sql);
 $enquete = "";
 $linha = $resultado->fetch_assoc();
-$enquete = $linha['noma'];
+$enquete = $linha['nome'];
 
 $sql = "select * from resposta where id_enquete = $id;";
 $resultado = conectar($sql);
@@ -13,7 +13,7 @@ $resultado = conectar($sql);
 <form action="responder-enquete.php" method="POST">
     <?php
     while ($linha = $resultado->fetch_assoc()) {
-        $nome = $linha['nome']
+        $nome = $linha['nome'];
         $id = $linha['id'];    
     ?>
     <div class="form-check">

@@ -9,8 +9,9 @@
 
 <body>
     <div class="container">
-        <h2>Lista de Enquetes <a href="criar-enquete.php" class="btn btn-secondary">Criar Nova Enquete</a></h2>
-        <table>
+        <h2>Lista de Enquetes <a href="criar-enquete.php" 
+        class="btn btn-secondary">Criar Nova Enquete</a></h2>
+        <table class="rable table-striped">
             <tr>
                 <th>Nome Enquete</th>
                 <th class="col-sm-1">Responder</th>
@@ -25,9 +26,9 @@
                 echo "<tr>
         <td>$nome</td>
         <td class='text-center'><a href='responder-enquete.php?id-enquete=$id'
-        class='btn btn-outline-primary btn-sm'></a></td>
+        class='btn btn-outline-primary btn-sm'>✒</a></td>
         <td class='text-center'><a href='resultado-enquete.php?id-enquete=$id'
-        class='btn btn-outline-primary btn-sm'></a></td>
+        class='btn btn-outline-primary btn-sm'>📈</a></td>
         </tr>";
             }
             ?>

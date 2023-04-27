@@ -6,18 +6,18 @@ function conectar($sql){
 
 $hostweb = true; // false para usar localhost, true para usar no 000webhost
 if($hostweb){
-    $id = "xxx"; // id ou prefixo do 000webhost
-    $senha = "xxx"; // senha do 000webhost
+    $id = "id20602892_"; 
+    $senha = "PDDiRq^TGi*^kWID4IBP"; 
 }
 
 $servidor = "localhost";
 $usuario = $id."root";
 $banco = $id."mydb";
 
-$con = new mysql($servidor, $usuario, $senha, $banco);
+$con = new mysqli($servidor, $usuario, $senha, $banco);
 
 if($con->connect_error){
-    die("Erro :".$con->connect_error");
+    die("Erro :".$con->connect_error);
 }
 return $con->query($sql);
 

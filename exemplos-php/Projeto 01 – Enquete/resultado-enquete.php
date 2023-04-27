@@ -1,6 +1,5 @@
  <!DOCTYPE html>
  <html lang="en">
-
  <head>
      <meta charset="UTF-8">
      <title>Document</title>
@@ -31,19 +30,17 @@
                 if ($id > 0) {
                     $retorno = conectar("select * from resposta where id_enquete = $id;");
                     while ($linha = $retorno->fetch_assoc()) {
-                        $respo´sta = $linha['nome'];
-                        $quentidade = $lnha['quantidade'];
+                        $resposta = $linha['nome'];
+                        $quantidade = $linha['quantidade'];
                         echo "<tr>
-                <td>$resoposta</td>
+                <td>$resposta</td>
                 <td>$quantidade</td>                
                 </tr>";
                     }
                 }
                 ?>
          </table>
-
      </div>
-
  </body>
 
  </html>
