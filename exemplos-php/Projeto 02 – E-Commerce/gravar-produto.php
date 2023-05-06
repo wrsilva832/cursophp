@@ -79,9 +79,6 @@ if (isset($_GET['apagar'])) {
     unlink("imagem");
     $sql = "delete * from produto where id = $id";
     $result = conectar($sql);
-
-
-}
 }
 ?>
 
