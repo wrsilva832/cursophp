@@ -24,7 +24,7 @@
                     <td>$valor</td>
                     <td><a href='admin.php?editar=$id'>✒</a></td>
                     <td><a href='admin.php?apagar=$id'>🗑</a></td>                
-                </tr>";
+                </tr>;
             }           
             ?>
         </table>
