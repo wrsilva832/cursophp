@@ -25,7 +25,7 @@
         }
 
         #carrinho-principal {
-            ` position: fixed;
+            position: fixed;
             right: 10px;
             bottom: 10px;
         }
@@ -36,7 +36,7 @@
         }
     </style>
     <div class="container mt-3">
-        <h2 class="text-center">Helena Nolleto</h2>
+        <h2 class="text-center">Doceria Senai</h2>
         <?php
         include("conectar.php");
         $sql = "select * from produto";
@@ -52,7 +52,7 @@
                 <img class="card-img-top" src="<?php echo $image; ?>" alt="Card image" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title"><?php echo $nome; ?></h4>
-                    <p class="card-text">R$: <?php echo $valor; ?>
+                    <p class="card-text"> <?php echo $valor; ?>
                         <a href="#" class="btn btn-outline-info" onclick="addItem(<?php echo $i ?>)">🛒</a>
                     </p>
                 </div>
@@ -130,7 +130,7 @@
                     p.nome = document.getElementsByClassName("card-title")[i].innerHTML;
                     p.valor = document.getElementsByClassName("card-text")[i].innerHTML;
                     n = p.valor.indexOf("<");
-                    p.valor = p.valor.substring(3,n);
+                    p.valor = p.valor.substring(3, n);
                     p.valor = p.valor.replace(",", ".")
                     p.quantidade = 1;
                     console.log(p);
@@ -142,7 +142,7 @@
             for (const i in lsProduto) {
                 p = lsProduto[i];
                 p.valorUnitario = p.valor;
-                tbCorpo +=
+                tbCorpo += `
                  <tr>
                  <td>${p.nome}</td>
                     <td class="valor">${p.valor}</td>
@@ -152,25 +152,61 @@
                     <span class="down" onclick="mudarQt(${i},-1)">🔽</span>
                     </td>
                     </tr>  
-                    ;
+                    `;
                     valorEncomenda += Number(p.valor);              
             }
-            tbCorpo += <tr>
+            tbCorpo += `<tr>
                             <td>Valor da Encomenda</td>
                             <td colspan="2" id="vlEncomenda">${Valor da Encomenda}</td>
-                            </tr>;
+                            </tr>`;
             document.getElementById("tb-corpo").innerHTML = tbCorpo;
         }
 
         function mudarQt(i, qt) {
             console.log(i);
+            console.log(qt);
+            p = lsProduto[i];
+            p.quantidade += qt;
+            if (p.quantidade <= 0) {
+            addItem(p.id);
+            document.getElementsByTagName("tr")[i + 1].style.display = "none";
+            p.valor = 0;
+            atualizaValorEncomenda();
+            return;
+            }              
+                p.valor = p.quantidade * p.valorUnitario;
+                document.getElementsByClassName("qt")[i].innerHTML = p.quantidade;
+                document.getElementsByClassName("valor")[i].innerHTML = p.valor;
+                atualizaValorEncomenda()
+            }
+
+            function atualizaValorEncomenda() {
+            valorEncomenda = 0;
+            for (p of lsProduto) {
+                valorEncomenda += Number(p.valor);                
+            }
+            document.getElementById("vlEncomenda").innerHTML = valorEncomenda;
         }
 
+        function enviarEncomenda() {
+            fone = "5561998118512";
+            if (valorEncomenda <= 0) {
+                alert("A encomenda deve ter ao menos 1 produto.");
+                return;
+            }
 
+            msg = "Gostaria de fazer a seguinte encomenda: \n";
+            for (p of lsProduto) {
+                if (p.quantidade > 0) {
+                    msg += `${p.nome} Qt. ${p.quantidade} = ${p.valor} \n`;
+                }
+            }
+        msg +=`Valor da Encomenda = ${valorEncomenda}`;
+        msg = encodeURI(msg);
+        url =`https://api.whatsap.com/send?phone=${fone}&text=${msg}`;
 
-
-
+        window.open(url, '_blank');
+        }
     </script>
 </body>
-
 </html>

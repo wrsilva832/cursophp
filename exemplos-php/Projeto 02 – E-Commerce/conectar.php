@@ -3,7 +3,7 @@ function conectar($sql){
     $id = "";
     $senha = "";
 
-$hostweb = true; // false para usar localhost, true para usar no 000webhost
+$hostweb = false; // false para usar localhost, true para usar no 000webhost
 if($hostweb){
     $id = "id20602892_"; 
     $senha = "PDDiRq^TGi*^kWID4IBP"; 
