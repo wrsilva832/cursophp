@@ -23,14 +23,14 @@ include('gravar-produto.php');
                     <input type="hidden" name="id" value="<?php echo $id ?>">
                     <div class="mb-3 mt-3">
                         <label for="nome" class="fomr-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $valor ?>">
+                        <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $nome ?>">
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="valor" class="fomr-label">Valor</label>
                         <input type="number" class="fomr-control" id="valor" name="valor" step="any" value="<?php echo $valor ?>">
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="fileToUpload" class="form-label">Image</label>
+                        <label for="fileToUpload" class="form-label">Imagem:</label>
                         <input type="file" class="form-control" id="fileToUpload" name="fileToUpload">
                         <input type="<?php echo $mostrarFileAtual ?>" class="form-control" 
                         id="fileAtual" name="fileAtual" value="<?php echo $image ?>">
@@ -59,3 +59,4 @@ include('gravar-produto.php');
 </body>
 
 </html>
+<!-- ok -->

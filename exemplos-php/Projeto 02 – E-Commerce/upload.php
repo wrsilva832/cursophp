@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         $msgUpload .= "Desculpe, não será possivel fazer o upload.<br>";        
     }else{
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$arquivo)){
-            //echo "Ok ao fazer o upload."            
+            //echo "Ok ao fazer o upload.";          
         }else{
             $msgUpload .= "Desculpe, erro inseperado ao fazer o upload.";
         }
@@ -47,3 +47,4 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+<!-- ok -->

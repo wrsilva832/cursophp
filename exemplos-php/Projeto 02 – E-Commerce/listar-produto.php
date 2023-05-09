@@ -17,7 +17,7 @@
                 $valor = $linha["valor"];
                 $imagem = $linha["imagem"];
                 $id = $linha["id"];
-                echo ""
+                echo 
                 <tr>
                     <td>$nome</td>
                     <td><a href="$imagem" target='_blank'>🖼</a></td>

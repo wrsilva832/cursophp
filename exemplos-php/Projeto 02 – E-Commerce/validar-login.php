@@ -1,6 +1,6 @@
 <?php
 session_start();
-acesso = "";
+$acesso = "";
 if (isset($_POST["email"])) {
     include('conectar.php');
     $email = $_POST["email"];
@@ -10,7 +10,8 @@ if (isset($_POST["email"])) {
         $_SESSION['acesso-restrito'] = true;
         echo"<script>window.location.replace('admin.php');</script>";        
     }else{
-        $acesso = "Acesso negado."
+        $acesso = "Acesso negado.";
     }
 }
 ?>
+<!-- ok -->

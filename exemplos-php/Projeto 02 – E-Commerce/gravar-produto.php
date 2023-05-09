@@ -1,5 +1,5 @@
 <?php
-$tpMsg = $msg = $nome = $image = $id = $fileAtual = "";
+$tpMsg = $msg = $nome = $valor =  $imagem = $id = $fileAtual = "";
 $mostrarFileAtual = "hidden";
 
 if (isset($_POST['submit'])) {
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     }
     if ($valor == "") {
         $gravar = false;
-        $msg .= "Necessário preencher o nome.<br>";
+        $msg .= "Necessário preencher o valor.<br>";
     }
 
     $arquivo = "";
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
         $gravar = false;
     }
 
-    if($gravar){
+    if($gravar) {
 
         if ($id == "") {
             $sql = "insert into produto(nome, valor, imagem) values('$nome', $valor, '$arquivo')";    
@@ -65,7 +65,7 @@ if ($id != "") {
     $result = conectar($sql);
     $linha = $result->fetch_assoc();
     $nome = $linha["nome"];
-    $valor = $linha[valor];
+    $valor = $linha["valor"];
     $imagem = $linha["imagem"]
     $mostrarFileAtual = "text";
 }
@@ -81,6 +81,7 @@ if (isset($_GET['apagar'])) {
     $result = conectar($sql);
 }
 ?>
+<!-- ok -->
 
 
 

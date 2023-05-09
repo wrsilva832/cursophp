@@ -12,3 +12,4 @@ create table produto(
 );
 
 insert into admin(email,senha) values("wellington@gmail.com","0123");
+-- ok

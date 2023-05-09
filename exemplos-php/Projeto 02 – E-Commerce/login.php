@@ -3,17 +3,17 @@ include('validar-login.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Doceria Senai</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
+        <div class="row justify-content-center">
         <div class="col-6">
-            <h2>
+            <h2>Login
                 <h5><?php echo $acesso; ?></h5>
             </h2>
             <form action="login.php" method="POST">
@@ -30,6 +30,8 @@ include('validar-login.php');
             </form>
         </div>
     </div>
+</div>
 </body>
 
 </html>
+<!-- ok -->
