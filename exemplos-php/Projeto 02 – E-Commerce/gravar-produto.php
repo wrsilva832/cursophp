@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     $fileAtual = $_POST["fileAtual"];
     if ($newFile != "") {
         include('upload.php');
-        if ($uploadok != 1) {
+        if ($uploadOk != 1) {
             $gravar = false;
         }
     }
@@ -66,7 +66,7 @@ if ($id != "") {
     $linha = $result->fetch_assoc();
     $nome = $linha["nome"];
     $valor = $linha["valor"];
-    $imagem = $linha["imagem"]
+    $imagem = $linha["imagem"];
     $mostrarFileAtual = "text";
 }
 
@@ -75,9 +75,9 @@ if (isset($_GET['apagar'])) {
     $sql = "select * from produto where id = $id";
     $result = conectar($sql);
     $linha = $result->fetch_assoc();
-    $imagem = $linha["imagem"]
-    unlink("imagem");
-    $sql = "delete * from produto where id = $id";
+    $imagem = $linha["imagem"];
+    unlink($imagem);
+    $sql = "delete from produto where id = $id";
     $result = conectar($sql);
 }
 ?>

@@ -1,14 +1,14 @@
 <?php
 //onde os arquivos serão salvos
 $pasta = "arquivos/";
-$arquivo = $pasta.basename($_FILES[fileToUpload]["name"]);
+$arquivo = $pasta.basename($_FILES["fileToUpload"]["name"]);
 //echo $arquivo;
 $uploadOk = 1;
 $tipoArquivo = strtolower(pathinfo($arquivo,PATHINFO_EXTENSION));
-$msgUpload .= "";
+$msgUpload = "";
 
 if (isset($_POST['submit'])) {
-    $check = getimagessize($_FILES["FileToUpload"]['tmp_name']);
+    $check = getimagesize($_FILES["fileToUpload"]['tmp_name']);
     if ($check !== false){
         //echo "É uma imagem ".arquivo;
     }else{
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     }
 
     //teste se o arquivo já existe na pasta
-    if(file_exist($arquivo)){
+    if(file_exists($arquivo)){
         $msgUpload .= "Arquivo já existente tente renomear ou enviar outro arquivo<br>";
         $uploadOk = 0;
     }

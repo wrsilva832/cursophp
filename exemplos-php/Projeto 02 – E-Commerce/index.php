@@ -49,10 +49,10 @@
             $id = $linha["id"];
         ?>
             <div class="card">
-                <img class="card-img-top" src="<?php echo $image; ?>" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="<?php echo $imagem; ?>" alt="Card image" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title"><?php echo $nome; ?></h4>
-                    <p class="card-text"> <?php echo $valor; ?>
+                    <p class="card-text">R$ <?php echo $valor; ?>
                         <a href="#" class="btn btn-outline-info" onclick="addItem(<?php echo $i ?>)">🛒</a>
                     </p>
                 </div>
@@ -157,7 +157,7 @@
             }
             tbCorpo += `<tr>
                             <td>Valor da Encomenda</td>
-                            <td colspan="2" id="vlEncomenda">${Valor da Encomenda}</td>
+                            <td colspan="2" id="vlEncomenda">${ValorEncomenda}</td>
                             </tr>`;
             document.getElementById("tb-corpo").innerHTML = tbCorpo;
         }

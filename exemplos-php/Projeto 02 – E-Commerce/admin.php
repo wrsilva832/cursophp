@@ -22,18 +22,18 @@ include('gravar-produto.php');
                 <form action="admin.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?php echo $id ?>">
                     <div class="mb-3 mt-3">
-                        <label for="nome" class="fomr-label">Nome</label>
+                        <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $nome ?>">
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="valor" class="fomr-label">Valor</label>
-                        <input type="number" class="fomr-control" id="valor" name="valor" step="any" value="<?php echo $valor ?>">
+                        <label for="valor" class="form-label">Valor</label>
+                        <input type="number" class="form-control" id="valor" name="valor" step="any" value="<?php echo $valor ?>">
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="fileToUpload" class="form-label">Imagem:</label>
                         <input type="file" class="form-control" id="fileToUpload" name="fileToUpload">
                         <input type="<?php echo $mostrarFileAtual ?>" class="form-control" 
-                        id="fileAtual" name="fileAtual" value="<?php echo $image ?>">
+                        id="fileAtual" name="fileAtual" value="<?php echo $imagem ?>">
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Enviar</button>
                     <a href="admin.php" class="btn btn-sucess">Novo</a>

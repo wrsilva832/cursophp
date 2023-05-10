@@ -8,7 +8,7 @@ create table produto(
     id int primary key auto_increment,
     nome varchar(200),
     valor float,
-    image varchar(200)
+    imagem varchar(200)
 );
 
 insert into admin(email,senha) values("wellington@gmail.com","0123");
