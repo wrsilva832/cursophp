@@ -19,7 +19,7 @@
             </tr>
             <?php
             include "conectar.php";
-            $retorno = conectar("select * from tarefa;");
+            $retorno = conectar("select * from tarefas;");
             while ($linha = $retorno->fetch_assoc()) {
                 $id = $linha['id'];
                 $nome = $linha['nome'];

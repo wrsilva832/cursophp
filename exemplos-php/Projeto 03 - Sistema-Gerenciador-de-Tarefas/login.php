@@ -27,7 +27,7 @@ include('validar-login.php');
                         <input type="password" class="form-control" id="senha" placeholder="Entre com a senha" name="senha">
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
-                    <a href="index.php">Criar Conta <a href="criar-conta.php"></a></a>
+                    <a href="index.php">Criar Conta</a></a>
                 </form>
             </div>
         </div>
