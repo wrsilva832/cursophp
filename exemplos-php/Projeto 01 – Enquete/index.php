@@ -16,6 +16,7 @@
                 <th>Nome Enquete</th>
                 <th class="col-sm-1">Responder</th>
                 <th class="col-sm-1">Resultado</th>
+                <th class="col-sm-1">Apagar</th>
             </tr>
             <?php
             include "conectar.php";
@@ -29,6 +30,8 @@
         class='btn btn-outline-primary btn-sm'>✒</a></td>
         <td class='text-center'><a href='resultado-enquete.php?id-enquete=$id'
         class='btn btn-outline-primary btn-sm'>📈</a></td>
+        <td class='text-center'><a href='resultado-enquete.php?id-enquete=$id'
+        class='btn btn-outline-primary btn-sm'>🗑</a></td>
         </tr>";
             }
             ?>

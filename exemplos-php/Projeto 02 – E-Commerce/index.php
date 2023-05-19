@@ -76,7 +76,7 @@
                     <button type="modal-title" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
-                <!-- MOdal body -->
+                <!-- Modal body -->
                 <div class="modal-body" id="modal-body">
                     <table class="table">
                         <thead>
