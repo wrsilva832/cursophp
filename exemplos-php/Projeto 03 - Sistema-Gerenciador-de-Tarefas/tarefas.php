@@ -3,22 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Lista de Tarefas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <h2>Criar Tarefas <a href="index.php" class="btn btn-secondary">Voltar</a></h2>
-        <?php
-        if (isset($_GET['qt-opcoes'])) {
-            include "form-nova-tarefa.php";
-        } elseif (isset($_GET['nome-tarefa'])) {
-            include "gravar-tarefa.php";
-        } else {
-            include "form-pre-nova-tarefa.php";
-        }
-        ?>
+    <div class="container mt-3">
+        <h2>Lista de Tarefas <a href="criar-nova-tarefa.php" 
+        class="btn btn-secondary">Criar Nova Tarefa</a></h2>
+        <table class="table">
+            <tr>
+                <th>Nome Tarefa</th>
+                <th class="col-sm-1">Responder</th>
+                <th class="col-sm-1">Apagar</th>
+            </tr>
+            <?php
+            include "conectar.php";
+            $retorno = conectar("select * from tarefa;");
+            while ($linha = $retorno->fetch_assoc()) {
+                $id = $linha['id'];
+                $nome = $linha['nome'];
+                echo "<tr>
+        <td>$nome</td>
+        <td class='text-center'><a href='responder-enquete.php?id-tarefa=$id' class='btn btn-outline-primary btn-sm'>✒</a></td>
+        <td class='text-center'><a href='resultado-tarefa.php?id-tarefa=$id' class='btn btn-outline-primary btn-sm'>🗑</a></td>
+        </tr>";
+            }
+            ?>
+        </table>
     </div>
 </body>
 

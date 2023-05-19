@@ -3,34 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Tarefas</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
 </head>
 
 <body>
+    <?php include("login.php"); ?>
     <div class="container mt-3">
-        <h2>Lista de Tarefas <a href="criar-nova-tarefa.php" 
-        class="btn btn-secondary">Criar Nova Tarefa</a></h2>
-        <table class="table">
-            <tr>
-                <th>Nome Tarefa</th>
-                <th class="col-sm-1">Responder</th>
-                <th class="col-sm-1">Apagar</th>
-            </tr>
-            <?php
-            include "conectar.php";
-            $retorno = conectar("select * from tarefas;");
-            while ($linha = $retorno->fetch_assoc()) {
-                $id = $linha['id'];
-                $nome = $linha['nome'];
-                echo "<tr>
-        <td>$nome</td>
-        <td class='text-center'><a href='responder-enquete.php?id-tarefa=$id' class='btn btn-outline-primary btn-sm'>✒</a></td>
-        <td class='text-center'><a href='resultado-tarefa.php?id-tarefa=$id' class='btn btn-outline-primary btn-sm'>🗑</a></td>
-        </tr>";
-            }
-            ?>
-        </table>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h2>Login</h2>
+                <?php if ($msg != "") { ?>
+                    <div class="alert alert-<?php echo $tpMsg; ?>">
+                        <strong><?php echo $msg; ?></strong>
+                    </div>
+                <?php } ?>
+                <form action="index.php" method="post">
+                    <div class="mb-3 mt-3">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha">Senha:</label>
+                        <input type="password" class="form-control" id="senha" placeholder="Enter password" name="senha">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Acessar</button>
+                    <a href="form-criar-conta.php">Criar conta</a>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 
