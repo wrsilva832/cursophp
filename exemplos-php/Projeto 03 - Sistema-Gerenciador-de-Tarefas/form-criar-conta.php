@@ -34,7 +34,7 @@
                         <input type="password" class="form-control" id="senha" placeholder="Enter password" name="confirmar" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Criar conta</button>
-                    <a href="index.php">Voltar</a>
+                    <a href="index.php" class="btn btn-success">Voltar</a>
                     
                 </form>
             </div>

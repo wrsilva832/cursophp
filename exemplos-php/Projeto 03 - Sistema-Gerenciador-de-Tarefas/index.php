@@ -30,7 +30,7 @@
                         <input type="password" class="form-control" id="senha" placeholder="Enter password" name="senha">
                     </div>
                     <button type="submit" class="btn btn-primary">Acessar</button>
-                    <a href="form-criar-conta.php">Criar conta</a>
+                    <a href="form-criar-conta.php" class="btn btn-success">Criar conta</a>
                 </form>
             </div>
         </div>

@@ -22,7 +22,9 @@ $msg = "";
                         <label for="nome" class="form-label"><strong>Escreva a Tarefa:</strong></label>
                         <input type="text" class="form-control" id="nome" name="nome"><br>
                         <button type="submit" class="btn btn-success" name="submit">Gravar</button>
-                        <a href="nova-tarefa.php" class="btn btn-secondary">Nova tarefa</a>
+                        <button type="submit" class="btn btn-secondary" name="submit">Nova Tarefa</button>
+                        <a href="logoff.php" class="btn btn-link">Voltar</a>
+                        
                 </form>
                 <?php
                 if ($msg != "") {
