@@ -22,4 +22,3 @@ if (isset($_POST['email'])) {
     }
 }
 ?>
-<!-- ok -->

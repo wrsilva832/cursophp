@@ -1,15 +1,13 @@
-CREATE TABLE usuarios(
+CREATE TABLE admin(
     id int primary key auto_increment,
-    id_admin int,
     email varchar(120) unique,
     senha varchar(120)
 );
 CREATE TABLE tarefas(
     id int primary key auto_increment,
-    id_admin int,
-    id_tarefa int,
+    id_tarefa int NOT NULL,
     nome varchar(250)
+    FOREIGN KEY (id_tarefa) REFERENCES admin(id)
 );
-insert into admin(email,senha) values("wrsilva832@gmail.com","0123");
-insert into admin(email,senha) values("wellington@gmail.com","0123");
--- ok
+insert into admin(email,senha) values("teste@gmail.com","0123");
+

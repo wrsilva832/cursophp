@@ -1,17 +1,8 @@
-<?php
-session_start();
-$acesso = "";
-if (isset($_POST["email"])) {
-    include('conectar.php');
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
-    $retorno = conectar("select * from admin where email = '$email' and senha = '$senha';");
-    if($linha = $retorno->fetch_assoc()){
-        $_SESSION['acesso-restrito'] = true;
-        echo"<script>window.location.replace('admin.php');</script>";        
-    }else{
-        $acesso = "Acesso negado.";
+<?php 
+    if(!isset($_SESSION['id_admin']))
+    {
+        echo "<script>window.location.replace('./index.php');</script>";
     }
-}
+    $id = $_SESSION['id_admin'];
 ?>
 <!-- ok -->

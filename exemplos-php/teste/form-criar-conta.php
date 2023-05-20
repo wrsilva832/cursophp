@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
     <?php include('criar-conta.php'); ?>
     <div class="container mt-3">
@@ -33,11 +35,11 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Criar conta</button>
                     <a href="index.php" class="btn btn-success">Voltar</a>
-
+                    
                 </form>
             </div>
         </div>
     </div>
 </body>
+
 </html>
-<!-- ok -->

@@ -1,21 +1,11 @@
 <?php
-    session_start();
-    $msg = "";
-    include 'validar-login.php';
-
-    include_once 'conectar.php';
-    if(isset($_POST['nome']))
-    {
-        $id = $_SESSION['id_admin'];
-        $nome = $_POST['nome'];
-        $sql = "INSERT INTO tarefas(id_tarefa, nome) VALUES($id, '$nome')";
-        conectar($sql);
-        echo "<script>window.location.replace('./admin.php');</script>";
-    }
+session_start();
+$msg = "";
+include 'gravar-tarefa.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de tarefas</title>
@@ -35,13 +25,13 @@
                     </h2>
 
                 </div>
-                <form action="admin.php" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <form action="gravar-tarefa.php" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?php //echo $id; ?>">
                     <div class="mb-3 mt-3">
                         <label for="nome" class="form-label"><strong>Escreva a Tarefa:</strong></label>
                         <input type="text" class="form-control" id="nome" name="nome"><br>
                         <button type="submit" class="btn btn-success" name="submit">Gravar</button>
-                        <button type="reset" class="btn btn-secondary" name="reset">Nova Tarefa</button>
+                        <button type="submit" class="btn btn-secondary" name="submit">Nova Tarefa</button>
                 </form>
                 <?php
                 if ($msg != "") {
@@ -55,13 +45,10 @@
         <?php } ?>
         </div>
         <?php
-            if($_SESSION['id_admin'])
-            {
-                include 'tarefas.php';
-            }
-        //  include('listar-tarefa.php');
+            include 'tarefas.php';
+        //include('listar-tarefa.php');
         ?>
     </div>
 </body>
+
 </html>
-<!-- ok -->
