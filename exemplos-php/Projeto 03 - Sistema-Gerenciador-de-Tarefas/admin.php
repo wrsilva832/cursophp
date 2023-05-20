@@ -12,7 +12,6 @@ $msg = "";
 </head>
 
 <body>
-
     <div class="container mt-03">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -20,10 +19,10 @@ $msg = "";
                 <form action="admin.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <div class="mb-3 mt-3">
-                        <label for="nome" class="form-label">Escreva a Tarefa:</label>
-                        <input type="text" class="form-control" id="nome" name="nome">
+                        <label for="nome" class="form-label"><strong>Escreva a Tarefa:</strong></label>
+                        <input type="text" class="form-control" id="nome" name="nome"><br>
                         <button type="submit" class="btn btn-success" name="submit">Gravar</button>
-                        <a href="index.php" class="btn btn-secondary">Nova tarefa</a>
+                        <a href="nova-tarefa.php" class="btn btn-secondary">Nova tarefa</a>
                 </form>
                 <?php
                 if ($msg != "") {
