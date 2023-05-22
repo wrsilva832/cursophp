@@ -8,7 +8,7 @@ include('gravar-produto.php');
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>DoceriaWR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -36,7 +36,7 @@ include('gravar-produto.php');
                         id="fileAtual" name="fileAtual" value="<?php echo $imagem ?>">
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Enviar</button>
-                    <a href="admin.php" class="btn btn-sucess">Novo</a>
+                    <a href="admin.php" class="btn btn-dark">Novo</a>
                     <a href="logout.php" class="btn btn-danger">Sair</a>
                 </form>
                 <?php
@@ -59,4 +59,4 @@ include('gravar-produto.php');
 </body>
 
 </html>
-<!-- ok -->
+<!-- Revisado -->

@@ -2,18 +2,26 @@
     session_start();
     $msg = "";
     include 'validar-login.php';
+    include 'conectar.php';
 
-    include_once 'conectar.php';
-    if(isset($_POST['nome']))
+    if(isset($_POST['nome']) && $_GET['editar'] == "")
     {
         $id = $_SESSION['id_admin'];
         $nome = $_POST['nome'];
         $sql = "INSERT INTO tarefas(id_tarefa, nome) VALUES($id, '$nome')";
         conectar($sql);
         echo "<script>window.location.replace('./admin.php');</script>";
-    }
-?>
+    }else{  
+        if(isset($_GET['editar']))
+        {
+            $sql = "UPDATE tarefas SET nome = '$nome' where id = $id";
+            $result = conectar($sql);
+            $msg = "Gravado com Sucesso.";
+            $tpMsg = "success";
 
+        }   
+    }       
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +36,10 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="header">
-                    <h2>
-                        Cadastro de Tarefas
+                    <h2>Cadastro de Tarefas
                         <a href="atualizar-senha" class="btn btn-info ">Atualizar senha</a>
                         <a href="logout.php" class="btn btn-danger">Sair</a>
                     </h2>
-
                 </div>
                 <form action="admin.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -59,9 +65,8 @@
             {
                 include 'tarefas.php';
             }
-        //  include('listar-tarefa.php');
         ?>
     </div>
 </body>
 </html>
-<!-- ok -->
+<!-- corrigir -->

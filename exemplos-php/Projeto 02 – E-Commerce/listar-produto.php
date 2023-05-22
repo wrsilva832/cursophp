@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-    <div class="col-md-10 ">
+    <div class="col-md-10">
         <br>
         <table class="table table-striped">
             <tr>
@@ -8,8 +8,9 @@
                 <th class="col-sm-1">Valor</th>
                 <th class="col-sm-1" colspan="2">Ações</th>
             </tr>
-
             <?php
+            include_once "./conectar.php";
+             
             $sql = "select * from produto";
             $resultado = conectar($sql); 
             while ($linha = $resultado->fetch_assoc()){
@@ -31,4 +32,6 @@
 
     </div>
 
+</div>
+<!-- revisado -->
 </div>

@@ -10,32 +10,27 @@
 </head>
 
 <body>
-    <?php include('criar-conta.php'); ?>
+    <?php include("login.php"); ?>
     <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-6">
-                <h2>Criar Nova Conta </h2>
+                <h2>Login</h2>
                 <?php if ($msg != "") { ?>
                     <div class="alert alert-<?php echo $tpMsg; ?>">
                         <strong><?php echo $msg; ?></strong>
                     </div>
                 <?php } ?>
-                <form action="form-criar-conta.php" method="POST">
+                <form action="index.php" method="post">
                     <div class="mb-3 mt-3">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                     </div>
                     <div class="mb-3">
                         <label for="senha">Senha:</label>
-                        <input type="password" class="form-control" id="senha" placeholder="Enter password" name="senha" required>
+                        <input type="password" class="form-control" id="senha" placeholder="Enter password" name="senha">
                     </div>
-                    <div class="mb-3">
-                        <label for="confirmar">Confirmar Senha:</label>
-                        <input type="password" class="form-control" id="senha" placeholder="Enter password" name="confirmar" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Criar conta</button>
-                    <a href="index.php">Voltar</a>
-                    
+                    <button type="submit" class="btn btn-primary">Acessar</button>
+                    <a href="form-criar-conta.php" class="btn btn-success">Criar conta</a>
                 </form>
             </div>
         </div>
@@ -43,3 +38,4 @@
 </body>
 
 </html>
+<!-- ok -->

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("conectar.php");
 $msg = "";
 $tpMsg = "danger";

@@ -14,7 +14,7 @@
     <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-6">
-                <h2>Login</h2>
+                <h2>Criar Nova Conta</h2>
                 <?php if ($msg != "") { ?>
                     <div class="alert alert-<?php echo $tpMsg; ?>">
                         <strong><?php echo $msg; ?></strong>
@@ -29,8 +29,11 @@
                         <label for="senha">Senha:</label>
                         <input type="password" class="form-control" id="senha" placeholder="Enter password" name="senha">
                     </div>
-                    <button type="submit" class="btn btn-primary">Acessar</button>
-                    <a href="form-criar-conta.php">Criar conta</a>
+                    <div class="mb-3">
+                        <label for="senha">Confirme a Senha:</label>
+                        <input type="password" class="form-control" id="senha" placeholder="Enter password" name="senha">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Criar Conta</button>
                 </form>
             </div>
         </div>
@@ -38,3 +41,4 @@
 </body>
 
 </html>
+<!-- ok -->
