@@ -14,6 +14,7 @@
     }else{  
         if(isset($_GET['editar']))
         {
+            $id = $_GET['editar'];
             $sql = "UPDATE tarefas SET nome = '$nome' where id = $id";
             $result = conectar($sql);
             $msg = "Gravado com Sucesso.";
