@@ -3,25 +3,39 @@
     $msg = "";
     include 'validar-login.php';
     include 'conectar.php';
-
-    if(isset($_POST['nome']) && $_GET['editar'] == "")
+    $id = $nome = "";
+    if(isset($_POST['nome']))
     {
         $id = $_SESSION['id_admin'];
         $nome = $_POST['nome'];
+        $nova = $_POST['id'];
+        if($nova == ""){
         $sql = "INSERT INTO tarefas(id_tarefa, nome) VALUES($id, '$nome')";
+        }else{
+            $sql = "update tarefas set nome = '$nome' where id = $nova;";
+        }
+        $msg = "Gravado com Sucesso.";
+        $tpMsg = "success";
         conectar($sql);
         echo "<script>window.location.replace('./admin.php');</script>";
-    }else{  
+    }
+    //editar
         if(isset($_GET['editar']))
         {
             $id = $_GET['editar'];
-            $sql = "UPDATE tarefas SET nome = '$nome' where id = $id";
+            $sql = "select * from tarefas where id = $id";
             $result = conectar($sql);
-            $msg = "Gravado com Sucesso.";
-            $tpMsg = "success";
-
+            $linha = $result->fetch_assoc();
+            $nome = $linha['nome'];
+        }  
+    //apagar  
+        if (isset($_GET['apagar'])) 
+        {
+            $id = $_GET['apagar'];
+            $sql = "delete from tarefas where id = $id";
+            conectar($sql);
         }   
-    }       
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
