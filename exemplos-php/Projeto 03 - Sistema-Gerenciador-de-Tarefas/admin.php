@@ -19,7 +19,7 @@
         conectar($sql);
         echo "<script>window.location.replace('./admin.php');</script>";
     }
-    //editar
+    //editar - corrigir
         if(isset($_GET['editar']))
         {
             $id = $_GET['editar'];
@@ -28,7 +28,7 @@
             $linha = $result->fetch_assoc();
             $nome = $linha['nome'];
         }  
-    //apagar  
+    //apagar - funcionando
         if (isset($_GET['apagar'])) 
         {
             $id = $_GET['apagar'];
@@ -62,7 +62,7 @@
                         <label for="nome" class="form-label"><strong>Escreva a Tarefa:</strong></label>
                         <input type="text" class="form-control" id="nome" name="nome"><br>
                         <button type="submit" class="btn btn-success" name="submit">Gravar</button>
-                        <button type="reset" class="btn btn-secondary" name="reset">Nova Tarefa</button>
+                        <a href="admin.php" class="btn btn-secondary">Nova Tarefa</a>
                 </form>
                 <?php
                 if ($msg != "") {
