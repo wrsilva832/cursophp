@@ -52,7 +52,7 @@
             <div class="col-md-12">
                 <div class="header">
                     <h2>Cadastro de Tarefas
-                        <a href="atualizar-senha" class="btn btn-info ">Atualizar senha</a>
+                        <a href="form-alterar-senha.php" class="btn btn-info ">Atualizar senha</a>
                         <a href="logout.php" class="btn btn-danger">Sair</a>
                     </h2>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="mb-3 mt-3">
                         <label for="nome" class="form-label"><strong>Escreva a Tarefa:</strong></label>
                         <!-- chama o editar e grava no banco -->
-                        <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>">
+                        <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>"><br>
                         <button type="submit" class="btn btn-success" name="submit">Gravar</button>
                         <a href="admin.php" class="btn btn-secondary">Nova Tarefa</a>
                 </form>
