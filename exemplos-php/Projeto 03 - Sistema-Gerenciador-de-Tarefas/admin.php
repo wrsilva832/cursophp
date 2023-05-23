@@ -60,7 +60,8 @@
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <div class="mb-3 mt-3">
                         <label for="nome" class="form-label"><strong>Escreva a Tarefa:</strong></label>
-                        <input type="text" class="form-control" id="nome" name="nome"><br>
+                        <!-- chama o editar e grava no banco -->
+                        <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>">
                         <button type="submit" class="btn btn-success" name="submit">Gravar</button>
                         <a href="admin.php" class="btn btn-secondary">Nova Tarefa</a>
                 </form>
