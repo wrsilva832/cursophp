@@ -19,7 +19,7 @@
         conectar($sql);
         echo "<script>window.location.replace('./admin.php');</script>";
     }
-    //editar - corrigir
+    //editar - corrigir nao puxa pra editar no forms
         if(isset($_GET['editar']))
         {
             $id = $_GET['editar'];
