@@ -3,7 +3,7 @@
     include("conectar.php");
     $msg = "";
     $tpMsg = "danger";
-    // Caso exista o id_admin na URL, faça:
+  
     if (isset($_SESSION['id_admin'])) 
     {
         $id = $_SESSION['id_admin'];
@@ -11,7 +11,7 @@
         $res = conectar($sql);
         $row = $res->fetch_assoc();
         
-        // Valida se clicou no enviar senha
+        
         if(isset($_POST['current_password']))
         {
             $current_password = $_POST['current_password'];
