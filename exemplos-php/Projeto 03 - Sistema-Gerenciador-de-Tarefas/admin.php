@@ -52,7 +52,7 @@
             <div class="col-md-12">
                 <div class="header">
                     <h2>Cadastro de Tarefas
-                        <a href="form-alterar-senha.php" class="btn btn-info ">Atualizar senha</a>
+                        <a href="form-atualizar-senha.php" class="btn btn-info ">Atualizar senha</a>
                         <a href="logout.php" class="btn btn-danger">Sair</a>
                     </h2>
                 </div>
